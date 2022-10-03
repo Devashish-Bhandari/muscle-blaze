@@ -1,10 +1,12 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import {Box, Button, Stack, TextField, Typography} from '@mui/material'
-// import { fontSize, textTransform } from '@mui/system'
 import { exerciseOptions, fetchData } from '../utils/fetchData'
 import HorizontalScrollbar from './HorizontalScrollbar'
 
+// Logic written for fetching the data
+// initially fetching all the exercises
+// on searching for some specific exercise, we get this
 const SearchExercises = ( {setExercises, bodyPart, setBodyPart}  ) => {
   const [search, setSearch] = useState('')
   const [bodyParts, setBodyParts] = useState([]);
@@ -21,7 +23,7 @@ const SearchExercises = ( {setExercises, bodyPart, setBodyPart}  ) => {
 
   const handleSearch = async () => {
     if(search){
-      const exerciseData= await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions)
+      const exerciseData= await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
 
       const searchedExercises= exerciseData.filter(
         (exercise) => exercise.name.toLowerCase().includes(search) 

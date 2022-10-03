@@ -5,13 +5,17 @@ import Loader from './Loader'
 const ExerciseVideos = ({exerciseVideos, name}) => {
   
   return (
+
     <Box sx={{ marginTop: {lg: '100px', xs:'20px'}, padding:{ xs:'40px 0', xl:'40px'}}}>
       
+      {/* HEADING */}
       <Typography variant="h4" mb="33px" textTransform='capitalize' fontWeight="bold">
         Watch <span style={{color:"#ff2625"}}>{name}</span>  exercise videos
       </Typography>
 
+      {/* IF WE GET THE VIDEO, OUT OF IT, GO ONLY FOR 3 VIDEOS , ELSE SHOW THE LOADING ANIMATION */}
       {exerciseVideos.length? 
+        
         <Stack justifyContent="flex-start" flexWrap="wrap" alignItems="center" sx={{
           flexDirection: {sm:'row'},
           gap: { sm:'20px', lg: '60px', xs:'0'}
