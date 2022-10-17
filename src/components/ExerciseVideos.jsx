@@ -29,6 +29,7 @@ const ExerciseVideos = ({exerciseVideos, name}) => {
               target="_blank"
               rel="noreferrer"
             >
+              
               <img className='video-img' style={{objectFit:"cover" }} src={item.video.thumbnails[0].url}  alt= {item.video.tiltle}/>
 
               <Box>
